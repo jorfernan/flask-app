@@ -31,7 +31,7 @@ def index():
     conn = get_db_connection() # Creating conection
     posts = conn.execute('SELECT * FROM posts').fetchall() # Executin query
     conn.close() # Closing connection
-    return render_template("index.html")
+    return render_template("index.html",posts=posts)
 
 #Route for specific post request
 @app.route('/<int:post_id>')
