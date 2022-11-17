@@ -5,8 +5,17 @@ from werkzeug.exceptions import abort
 
 # Database File
 DB_FILE = 'database.db'
+#Location of password
+SECRET_KEY_FILE = "secret_key.txt"
+
+with open(SECRET_KEY_FILE,"r") as secret_file_key:
+    key = secret_file_key.read().strip()
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = key
+
+print(app.config['SECRET_KEY'])
+
 
 """ Function that establish a connection to the database file"""
 def get_db_connection():
