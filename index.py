@@ -14,8 +14,6 @@ with open(SECRET_KEY_FILE,"r") as secret_file_key:
 app = Flask(__name__)
 app.config['SECRET_KEY'] = key
 
-print(app.config['SECRET_KEY'])
-
 
 """ Function that establish a connection to the database file"""
 def get_db_connection():
