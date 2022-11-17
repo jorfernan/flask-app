@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Welcome to FlaskBlog {% endblock %}</h1>
+    <h1>{% block title %} Welcome to JotaFM Blog {% endblock %}</h1>
     {% for post in posts %}
-        <a href="{{ url_for('post', post_id=post['id']) }}">
+        <a class = "link title" href="{{ url_for('post', post_id=post['id']) }}">
             <h2>{{ post['title'] }}</h2>
         </a>
-        <span class="badge badge-primary">{{ post['created'] }}</span>
-        <a href="{{ url_for('edit', id=post['id']) }}">
-            <span class="badge badge-warning">Edit</span>
-        </a>
+        <div class="info">
+            <span class="badge badge-primary p-1">{{ post['created'] }}</span>
+            <a href="{{ url_for('edit', id=post['id']) }}" class="d-flex justify-content-center align-items-center">
+                <span class="badge badge-warning p-1">Edit</span>
+            </a>
+        </div>
         <hr>
     {% endfor %}
 {% endblock %}
