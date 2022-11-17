@@ -23,3 +23,6 @@ python3 init_db.py
 
 # RUNNING the APP: Execute this command
 FLASK_APP=index.py flask run
+
+# Create a secret password
+echo "YOUR_PASSWORD">secret_key.txt
