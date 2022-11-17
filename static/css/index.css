@@ -1,6 +1,44 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,body{
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(72,51,112);
+    background: linear-gradient(90deg, rgba(72,51,112,1) 0%, rgba(123,98,164,1) 73%);
+}
+.navbar {
+    background: #483370 !important;
+}
+
+nav a img {
+    width: 50px;
+    height: 50px;
+}
+
 h1 {
-    border: 2px #eee solid;
-    color: brown;
     text-align: center;
-    padding: 10px;
+    padding: 1em;
+    color: #FFE5FF88;
+}
+
+.link.title{
+    color:#253132;
+    text-decoration: none;
+}
+.link.title:hover{
+    color: #000;
+    transition: .3s;
+    border: #253132;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    padding: .3rem;
 }
