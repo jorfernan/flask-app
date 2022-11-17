@@ -8,4 +8,9 @@ https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-u
 python3 -m venv .flask-app
 
 # Activation of virtual environment
-source .flask-app
+
+# Linux
+source .flask-app/bin/activate
+
+# Windows
+source .flask-app/Scripts/activate
