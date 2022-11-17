@@ -4,9 +4,9 @@ import sqlite3
 from werkzeug.exceptions import abort
 
 # Database File
-DB_FILE = 'database.db'
+DB_FILE =                   'database.db'
 #Location of password
-SECRET_KEY_FILE = "secret_key.txt"
+SECRET_KEY_FILE =           "secret_key.txt"
 
 with open(SECRET_KEY_FILE,"r") as secret_file_key:
     key = secret_file_key.read().strip()
@@ -31,7 +31,7 @@ def get_post(post_id):
         abort(404)
     return post
     
-
+""" Root route, selects all posts from the database """
 @app.route('/')
 def index():
     # Get all posts from database file
@@ -40,14 +40,14 @@ def index():
     conn.close() # Closing connection
     return render_template("index.html",posts=posts)
 
-#Route for specific post request
+""" Post route, selects an specific post from the database based on its id """
 @app.route('/<int:post_id>')
 def post(post_id):
     post = get_post(post_id)
     return render_template('post.html', post=post)
 
 
-# Function that displays a form template
+""" Create route, renders a html 'create post' form and deals with its request """
 @app.route('/create', methods = ('GET','POST'))
 def create():
     if request.method == 'POST':
@@ -66,6 +66,7 @@ def create():
             
     return render_template('create.html')
 
+""" Edit post route, takes an id from the specific post to render a html form """
 @app.route('/<int:id>/edit', methods=('GET', 'POST'))
 def edit(id):
     post = get_post(id)
@@ -87,6 +88,7 @@ def edit(id):
 
     return render_template('edit.html', post=post)
 
+""" Deletes a post based on its id """
 @app.route('/<int:id>/delete', methods=('POST',))
 def delete(id):
     post = get_post(id)
