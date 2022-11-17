@@ -1,3 +1,4 @@
 .flask-app/
 database.db
 __pycache__/
+secret_key.txt
