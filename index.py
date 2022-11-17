@@ -47,3 +47,9 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     return render_template('post.html', post=post)
+
+
+# Function that displays a form template
+@app.route('/create', methods=('GET', 'POST'))
+def create():
+    return render_template('create.html')
