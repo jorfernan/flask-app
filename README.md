@@ -20,3 +20,6 @@ pip3 install -r requirements.txt
 
 # RUNNING the APP: Execute this command
 FLASK_APP=index.py flask run
+
+# Create the Database
+python3 init_db.py
