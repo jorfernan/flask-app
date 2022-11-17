@@ -14,3 +14,6 @@ source .flask-app/bin/activate
 
 # Windows
 source .flask-app/Scripts/activate
+
+# Installing requirements 
+pip3 install -r requirements.txt
