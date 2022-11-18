@@ -9,12 +9,7 @@ DB_FILE =                   'database.db'
 #Location of password
 SECRET_KEY_FILE =           "secret_key.txt"
 
-with open(SECRET_KEY_FILE,"r") as secret_file_key:
-    key = secret_file_key.read().strip()
-
 app = Flask(__name__)
-app.config['SECRET_KEY'] = key
-
 
 """ Function that establish a connection to the database file"""
 def get_db_connection():
@@ -103,4 +98,15 @@ def delete(id):
 
 # Execute development server
 if __name__=="__main__":
-    app.run(host="localhost", port=5000, debug=True)
+    try:
+
+        with open(SECRET_KEY_FILE,"r") as secret_file_key:
+            key = secret_file_key.read().strip()
+
+        app.config['SECRET_KEY'] = key
+        app.run(host="localhost", port=5000, debug=True)
+    
+    except FileNotFoundError as e:
+        print("\nI need a secret_key.txt file!\n")
+        print("Try this command:\n\n\t'echo YOUR_PASSWORD>secret_key.txt' on the same level as the index.py file\n")
+        raise SystemExit
