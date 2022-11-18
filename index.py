@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 from flask import Flask, render_template, request,url_for,flash,redirect
 import sqlite3
 from werkzeug.exceptions import abort
@@ -98,3 +99,8 @@ def delete(id):
     conn.close()
     flash('"{}" was successfully deleted!'.format(post['title']))
     return redirect(url_for('index'))
+
+
+# Execute development server
+if __name__=="__main__":
+    app.run(host="localhost", port=5000, debug=True)
