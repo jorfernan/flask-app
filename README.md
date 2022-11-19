@@ -20,10 +20,10 @@ source .flask-app/bin/activate
 source .flask-app/Scripts/activate
 
 # Installing requirements 
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 
 # Create the Database
-python3 init_db.py
+python init_db.py
 
 # Create a secret password
 echo "YOUR_PASSWORD">secret_key.txt
