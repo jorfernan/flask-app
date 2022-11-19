@@ -4,6 +4,10 @@ Realization of a Flask-app tutorial from digitalocean.com
 # URL 
 https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3
 
+# Download repo and access to it
+git clone https://github.com/jorfernan/flask-app.git 
+cd flask-app
+
 # Creation of virtual envionment
 python3 -m venv .flask-app
 
