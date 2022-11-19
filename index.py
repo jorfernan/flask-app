@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-
+#!/usr/bin/env python
 from flask import Flask, render_template, request,url_for,flash,redirect
 import sqlite3
 from werkzeug.exceptions import abort
