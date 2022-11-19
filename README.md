@@ -28,7 +28,8 @@ python init_db.py
 # Create a secret password
 echo "YOUR_PASSWORD">secret_key.txt
 
-# RUNNING the APP: Execute this command
-FLASK_APP=index.py flask run or python index.py
-
+# RUNNING the APP: Execute one of this commands
+## FLASK_APP=index.py flask run
+## python index.py
+## ./index.py
 
