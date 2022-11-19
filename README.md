@@ -21,8 +21,10 @@ pip3 install -r requirements.txt
 # Create the Database
 python3 init_db.py
 
+# Create a secret password
+echo "YOUR_PASSWORD">secret_key.txt
+
 # RUNNING the APP: Execute this command
 FLASK_APP=index.py flask run or python index.py
 
-# Create a secret password
-echo "YOUR_PASSWORD">secret_key.txt
+
